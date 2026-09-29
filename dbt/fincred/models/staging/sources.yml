@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: fincred_raw
+    schema: raw
+    tables:
+      - name: customers
+      - name: credit_requests
+      - name: proposals
+      - name: contracts
+      - name: installments
+      - name: payments
+      - name: bureau_scores
