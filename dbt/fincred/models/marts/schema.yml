@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: fct_installments
+    columns:
+      - name: installment_id
+        data_tests:
+          - unique
+          - not_null
+
