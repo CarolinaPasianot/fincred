@@ -8,3 +8,69 @@ models:
           - unique
           - not_null
 
+      - name: contract_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_contracts')
+                field: contract_id
+
+  - name: fct_credit_requests
+    columns:
+      - name: credit_request_id
+        data_tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_credit_requests')
+                field: credit_request_id
+
+      - name: customer_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
+
+      - name: status
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - EM_ANALISE
+                  - APROVADA
+                  - REJEITADA
+
+  - name: fct_contracts
+    columns:
+      - name: contract_id
+        data_tests:
+          - unique
+          - not_null
+
+      - name: proposal_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_proposals')
+                field: proposal_id
+
+  - name: fct_proposals
+    columns:
+      - name: proposal_id
+        data_tests:
+          - unique
+          - not_null
+
+      - name: credit_request_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_credit_requests')
+                field: credit_request_id
