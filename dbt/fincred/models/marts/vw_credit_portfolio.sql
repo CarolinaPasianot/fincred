@@ -38,7 +38,8 @@ select  a.contract_id,
         b.max_days_late days_late,
         case
             when b.max_days_late > 90 then 'INADIMPLENTE'
-            when b.max_days_late between 1 and 90 then 'EM_ATRASO'
+            when b.open_installment_amount > 0 and b.max_days_late between 1 and 90 then 'ATRASADA'
+            when b.open_installment_amount = 0 then 'EM_DIA'
             else 'EM_DIA'
         end contract_situation
 from {{ref('stg_contracts')}} a 
