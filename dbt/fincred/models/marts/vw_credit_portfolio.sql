@@ -43,4 +43,4 @@ select  a.contract_id,
             else 'EM_DIA'
         end contract_situation
 from {{ref('stg_contracts')}} a 
-inner join parcelas b on a.contract_id = b.contract_id
+inner join parcelas b on a.contract_id = b.contract_id 

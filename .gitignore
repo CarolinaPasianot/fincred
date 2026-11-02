@@ -223,3 +223,13 @@ logs/
 target/
 dbt_packages/
 dbt_internal_packages/
+
+# Python virtual environment
+.venv/
+
+# Streamlit local secrets
+.streamlit/secrets.toml
+
+# dbt local artifacts
+dbt/fincred/target/
+dbt/fincred/logs/
