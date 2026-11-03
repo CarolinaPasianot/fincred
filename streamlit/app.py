@@ -187,6 +187,7 @@ try:
         options=years,
         default=[],
         format_func=lambda x: str(int(x)),
+        placeholder="Selecione uma ou mais opções"
     )
 
     situations = ["EM_DIA", "EM_ATRASO", "INADIMPLENTE"]
@@ -195,11 +196,10 @@ try:
         "Situação do contrato",
         options=situations,
         default=[],
+        placeholder="Selecione uma ou mais opções"
     )
 
     st.sidebar.divider()
-    st.sidebar.caption("Cópia estática dos dados de demonstração.")
-    st.sidebar.caption("Referência dos indicadores: 31/12/2026")
 
     # -----------------------------------------------------
     # APLICAÇÃO DOS FILTROS
